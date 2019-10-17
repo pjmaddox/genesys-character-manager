@@ -1,5 +1,7 @@
 {
     "characters": [
-        { "id": 0, "name": "Test Guy" }
+        { "id": 0, "name": "Test Guy1", "otherAttribute": 15 },
+        { "id": 1, "name": "Test Guy2", "otherAttribute": 17 },
+        { "id": 2, "name": "Test Guy3", "otherAttribute": 16 }
     ]
 }

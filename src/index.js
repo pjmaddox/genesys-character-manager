@@ -7,10 +7,10 @@ import reducer from "./reducers/rootReducer";
 import { Provider } from "react-redux";
 
 
-let store = createStore();
+let store = createStore(reducer);
 
 ReactDOM.render(
-    <Provider store={reducer}>
+    <Provider store={store}>
         <App />
     </Provider>,
     document.querySelector("#root")

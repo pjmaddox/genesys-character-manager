@@ -1,3 +1,3 @@
-export function GetRandomStringOfLength() {
+export function GetRandomStringOfLength(length) {
     
 };

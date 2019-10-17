@@ -36,7 +36,8 @@ describe("CharacterName render", () => {
         it("should call onChange prop function on change", () => {
             let someText = "";
             let mockEvent = { target: { value: someText } };
-            wrappedCharacterName.simulate("change", mockEvent);
+            let node = wrappedCharacterName.find(Input);
+            node.simulate("change", mockEvent);
             wrappedCharacterName.update();
             expect(mockValueChangeFunction).toBeCalled();
         });

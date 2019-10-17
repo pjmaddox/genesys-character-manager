@@ -5,7 +5,7 @@ import { Input } from "@material-ui/core";
 const CharacterName = (props) => {
     return (
         <React.Fragment>
-            <Input placeholder={"Character Name"} type={"text"} onChange={(event) => {props.onValueChange(characterId, event.target.value)}} value={props.name} />
+            <Input id="characterNameInput" placeholder={"Character Name"} type={"text"} onChange={(event) => {props.onValueChange(props.characterId, event.target.value)}} value={props.name} />
         </React.Fragment>
     );
 };

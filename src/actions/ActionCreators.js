@@ -1,6 +1,9 @@
-import ActionTypes from "./actionTypes";
+import CharacterApi from "../api/CharacterApi";
+import ActionTypes from "./ActionTypes";
 
-export function CharacterNameChanged (characterId, newName) {
+export const CharacterNameChanged = (characterId, newName) => {
+    //PersistCharacterNameChange(characterId, newName);   ????
+
     return {
         type: ActionTypes.CharacterNameChanged,
         payload: {
@@ -9,3 +12,17 @@ export function CharacterNameChanged (characterId, newName) {
         }
     };
 };
+
+export const CharacterAdded = () => {
+    return {
+        type: ActionTypes.CharacterAdded,
+        payload: {  }
+    };
+}
+
+// export const  PersistCurrentCharacter = async (characterId, characterData) => {
+//     return (dispatch) => {
+//         //Do some crap
+//         CharacterApi.put(`/characters/:${characterId}/name`, newName);
+//     };
+// }

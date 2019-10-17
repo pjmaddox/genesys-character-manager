@@ -1,17 +1,18 @@
 import { connect } from "react-redux";
 import CharacterName from "../CharacterName";
-import ActionCreators from '../../actions/ActionCreators'
+import { CharacterNameChanged } from '../../actions/ActionCreators'
 
 const mapStateToProps = (state, ownProps) => {
+    console.log(state);
     return {
-        name: state[ownProps.characterId].name,
+        name: state.characters[ownProps.characterId].name || "",
         characterId: ownProps.characterId
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onValueChange: (characterId, newName) => { dispatch(ActionCreators.CharacterNameChanged(characterId, newName)); }
+        onValueChange: (characterId, newName) => { dispatch(CharacterNameChanged(characterId, newName)); }
     };
 };
 

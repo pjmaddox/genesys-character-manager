@@ -17,9 +17,27 @@ const CharacterReducer = (previousState = {}, action) => {
                     draftState[targetCharacterId].name = newCharacterName;
                 });
             }
+        case ActionTypes.CharacterAdded:
+            //let newCharacter = GetDefaultNewCharacter();
+            let { id, ...newCharacter } = GetDefaultNewCharacter();
+            return produce(pState, draftState => {
+                draftState[id] = newCharacter;
+            });
         default:
             return pState;
     }
 };
+
+function GetNewCharacterId() {
+    //let global.Date.now();
+    return Date.getTime();
+}
+
+function GetDefaultNewCharacter() {
+    return {
+        id: GetNewCharacterId(),
+        name: ""
+    };
+}
 
 export default CharacterReducer;
